@@ -1,0 +1,74 @@
+Set up a React project if you haven't already. You can use the same Vite project we created in the previous answer.
+
+Edit the src/App.js file to create the counter component:
+
+jsx
+Copy code
+import React, { useState } from 'react';
+import './App.css'; // You can create this CSS file for styling
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const increaseCounter = () => {
+    setCount(count + 1);
+  };
+
+  const decreaseCounter = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div className="App">
+      <h1>Counter App</h1>
+      <div className="counter">
+        <button onClick={decreaseCounter}>Decrease</button>
+        <span className="count">{count}</span>
+        <button onClick={increaseCounter}>Increase</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+Create a CSS file (src/App.css) for styling your counter:
+css
+Copy code
+.App {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.count {
+  font-size: 36px;
+  margin: 0 20px;
+}
+Start the development server:
+
+Run npm run dev to start the Vite development server.
+
+View your counter app:
+
+Go to http://localhost:3000 in your web browser. You will see the "Counter App" with the counter number and two buttons ("Decrease" and "Increase"). Clicking these buttons will increase or decrease the counter, and the number will be styled according to the CSS rules.
+
+Now, you have a simple counter app in React.js with increase and decrease buttons, and the counter number is styled accordingly. You can further customize and enhance this app as needed.
+
+
+
+
